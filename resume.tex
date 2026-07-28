@@ -1,18 +1,23 @@
-%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2026 moderncv maintainers (github.com/moderncv), 2026 Anson Mansfield
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License version 1.3c,
-% available at http://www.latex-project.org/lppl/.
 
-\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[11pt,letterpaper,sans]{moderncv}
+% possible options include font size ('10pt', '11pt' and '12pt'),
+% paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape'),
+% and font family ('sans' and 'roman')
 
-\moderncvcolor{green}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
-% moderncv themes
-\moderncvstyle[]{casual}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
-                                                   % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
+% moderncv theme
+\moderncvcolor{green}
+% color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+% for contemporary style use 'cerulean'
+
+\moderncvstyle[]{classic}
+% style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
+% the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
+
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 
-\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}                  % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+% the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
+
 %\usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
@@ -22,6 +27,7 @@
 %\def\@moderncvheadBackground{
 %}
 
+\usepackage{microtype}
 % font loading
 % for luatex and xetex, do not use inputenc and fontenc
 % see https://tex.stackexchange.com/a/496643
@@ -35,10 +41,10 @@
   \setmathfont{Latin Modern Math}
 
   % you may also consider Fira Sans Light for a extra modern look
-  %\setsansfont[ItalicFont={Fira Sans Light Italic},%
-  %           BoldFont={Fira Sans},%
-  %           BoldItalicFont={Fira Sans Italic}]%
-  %           {Fira Sans Light}%
+%   \setsansfont[ItalicFont={Fira Sans Light Italic},%
+%             BoldFont={Fira Sans},%
+%             BoldItalicFont={Fira Sans Italic}]%
+%             {Fira Sans Light}%
 \else
   \usepackage[utf8]{inputenc}
   \usepackage[T1]{fontenc}
@@ -50,21 +56,23 @@
 
 
 % personal data
-\name{Anson}{Mansfield}
 \input{personal-info}
+
+% less-personal data
+\name{Anson}{Mansfield}
 \email{anson@ajmansfield.xyz}
 \social[linkedin]{ajmansfield1}
 \social[github]{AJMansfield}
 \social[stackoverflow]{1324631/ajmansfield}
-\social[discord]{AJMansfield}
+\social[discord]{AJMansfield\#5742}
 
 \begin{document}
 \makecvtitle
 
 \section{Experience}
-\cventry{2024--Present}{Open Source Contributor}{MicroPython}{\href{https://micropython.org/}{micropython.org}}{}{
-\begin{itemize}
-    \item Implemented \href{https://peps.python.org/pep-0487/}{PEP 487 - Simpler customisation of class creation}.
+\cventry{2024--Present}{Open Source Contributor}{MicroPython}{}{\href{https://micropython.org/}{micropython.org}}{
+% \begin{itemize}
+    Implemented \href{https://peps.python.org/pep-0487/}{PEP 487 - Simpler customisation of class creation}.
     \begin{itemize}
         \item Documented requirements with automated test cases:
             \href{https://github.com/micropython/micropython/pull/15500}{\#15500}.
@@ -79,15 +87,15 @@
         \item Discovered and reported a novel bug in CPython:
             \href{https://bugs.python.org/issue28797}{BPO-28797},
             \href{https://github.com/python/cpython/issues/72983}{CPython\#72983}.
-        \item Applied embedded-specific architectural concepts to discover a far more refined path to implementation:
+        \item Engineered a final no-compromises version using embedded-specific memory layouts:
             \href{https://github.com/micropython/micropython/pull/16806}{\#16806}.
-        \item Participated in code reviews to produce final merge-quality code \emph{and} commit history.
-        \item Communicated completion with downstream consumers:
+        \item Participated in code reviews and revised into merge-quality code \emph{and} commit history.
+        \item Communicated completion with downstream projects:
             \href{https://github.com/adafruit/circuitpython/issues/9685}{CircuitPython\#9685}.
     \end{itemize}
-    \item Lowered defect rates across the board with combined statistical, technical, and human factors methods.
+    Lowered defect rates across the board with combined statistical, technical, and human factors methods.
     \begin{itemize}
-        \item Applied confusion matrix statistical measures to recommend targeted improvements to specific low-reliability processes:
+        \item Identified low-reliability test processes using confusion matrix statistics:
             \href{https://github.com/micropython/micropython/pull/17745}{\#17745},
             \href{https://github.com/micropython/micropython/pull/17993}{\#17993}.
         \item Reported on an emerging Normalization of Deviance issues among contributors:
@@ -95,7 +103,7 @@
         \item Led discussion and proposals around problems and technical and human-factors solutions:
             \href{https://github.com/orgs/micropython/discussions/18844}{\#18844}.
     \end{itemize}
-    \item Founded and led MicroPython's Triage Team.
+    Founded and led MicroPython's Triage Team.
     \begin{itemize}
         \item Raised initial concerns about volunteer morale and delays in MicroPython's Pull Request process:
             \href{https://github.com/orgs/micropython/discussions/18844}{\#18844}.
@@ -104,41 +112,49 @@
         \item Led development of team tooling, processes, and documentation:
             \href{https://github.com/orgs/micropython/discussions/18878}{\#18878}.
     \end{itemize}
-\end{itemize}}
+% \end{itemize}
+}
 
-\cventry{2017--Present}{Senior Software Engineer}{Mantaro}{Germantown, MD}{}{
+\cventry{2017--Present}{Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
 \begin{itemize}
-    \item Designed custom circuitry.
+    \item Designed custom circuitry and devices.
     \item Laid out dense 10-layer circuit boards.
     \item Developed security-critical low-level firmware.
     \item Implemented low-level network protocols.
     \item Programmed in C, Python, Rust.
     \item Engineered high-reliability multi-path radios.
-    \item Architected and implemented cryptographic protocols for IoT.
+    \item Architected and implemented IoT cryptographic suites.
     \item Reverse-engineered obsolete domain-specific languages to update old products.
     \item Programmed in C, Python, PHP, Reach SLDC, TI DSP assembly.
 \end{itemize}}
 
-\cventry{2016--2016}{Dell On-Site Technician}{Unisys}{Washington D.C.}{}{
+\cventry{2016--2016}{Dell On-Site Technician}{Unisys}{Washington DC}{\href{https://www.unisys.com/partners/dell/}{unisys.com}}{
 \begin{itemize}
     \item Traveled to customer sites.
     \item Performed warranty service and parts-level repairs.
     \item Serviced Dell laptops, tablets, and desktop computers.
 \end{itemize}}
 
-\cventry{2013--2014}{Apprentice Plumber}{Mallick Mechanicl}{Bethesda, MD}{}{
+\cventry{2013--2014}{Apprentice Plumber}{Mallick Mechanical}{Bethesda MD}{\href{https://mallickmechanical.com/}{mallickmechanical.com}}{
+New Commercial High Rise Construction
 \begin{itemize}
-\item Installed large scale (>18 in) cast iron drain pipework.
-\item Installed and brazed copper refrigeration pipework.
+\item Installed large cast iron drain pipework (up to 24" diameter).
+\item Installed soldered copper water pipework.
+\item Installed brazed copper refrigeration pipework.
 \item Installed commercial bathroom fixtures.
-\item Performed other commercial high-rise construction tasks.
 \end{itemize}}
 
 \section{Education}
-\cventry{2015--2017}{B.S. Computer Engineering (incomplete)}{Brigham Young University}{Salt Lake City, UT}{}{}
-\cventry{2010--2014}{High School Diploma}{Poolesville High School}{Poolesville, MD}{}{}
+\cventry{2015--2017}{Brigham Young University}{Computer Engineering Course Credit}{Salt Lake City UT}{}{}
+\cventry{2014--2015}{Montgomery Community College}{Engineering Course Credit}{Rockville MD}{}{}
+\cventry{2010--2014}{Poolesville High School}{High School Diploma}{Poolesville MD}{}{}
 
+\section{Interests}
+\cvitem{Writing}{Science fiction and fantasy by choice, but writing is the same as anything else.}
+\cvitem{Cooking}{Candy, pies, fried, baked, grilled, stewed. Spicy is a tool, not the point.}
 
+\newpage
+\makecvhead
 \section{Skill matrix}
 %% Skill matrix as an alternative to rate one's skills, computer or other.
 
@@ -192,7 +208,7 @@
 \cvskillentry{}{2}{SQL}{2}{The ORM has betrayed me, and it's sure to again.}
 \cvskillentry{}{2}{\LaTeX}{2}{As demonstrated.}
 \cvskillentry{}{2}{Java}{2}{We've all modded minecraft a \emph{little,} right?}
-\cvskillentry*{Platforms:}{5}{MicroPython}{6}{I know least, parts of myself left behind to create it.}
+\cvskillentry*{Platforms:}{5}{MicroPython}{6}{I know least, parts of myself left behind to help create it.}
 \cvskillentry{}{5}{Linux}{7}{Vendor BSPs are a form of aposomatic coloration.}
 \cvskillentry{}{4}{SQLite}{6}{Best database.}
 \cvskillentry{}{4}{BusyBox}{5}{Your first mistake is assuming \emph{GNU}/Linux.}
@@ -200,26 +216,22 @@
 \cvskillentry{}{3}{Zephyr}{2}{Best RTOS.}
 \cvskillentry*{OS:}{5}{Linux}{20}{Year of the Linux Desktop? Please?}
 \cvskillentry{}{4}{Windows}{25}{At least with WSL it \emph{kinda} runs everything.}
-\cvskillentry*{EDA:}{4}{KiCAD}{2}{KiCad 11 geometric constraints, eagerly awaited.}
+\cvskillentry*{EDA:}{4}{KiCAD}{2}{Eagerly awaiting Geometric Constraints in KiCad 11.}
 \cvskillentry{}{3}{Altium}{2}{It's the default for reasons \emph{other} than being good.}
 \cvskillentry{}{4}{EasyEDA}{4}{Easy instead of featureful.}
 \cvskillentry{}{3}{TopoR}{1}{The \emph{only} good pcb autorouter.}
-\cvskillentry*{CAD:}{4}{OnShape}{2}{Excellent scripting interface, too.}
-\cvskillentry{}{4}{Fusion 360}{4}{Better brep kernel than OnShape.}
+\cvskillentry*{CAD:}{4}{OnShape}{2}{Excellent scripting interface; my preference.}
+\cvskillentry{}{4}{Fusion 360}{4}{Better brep geometry kernel than OnShape.}
 
 %% \cvskill{<0-5>} command
 % \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
-
-\section{Interests}
-\cvitem{Writing}{Science fiction and fantasy by choice, but writing is the same as anything else.}
-\cvitem{Cooking}{Candy, pies, fried, baked, grilled, stewed. Spicy is a tool, not the point.}
 
 \section{References}
 \begin{cvcolumns}
   \cvcolumn{MicroPython}{
     \begin{itemize}
         \item Damien George <\emaillink{damien@micropython.org}>
-        \item Jos Verlinde <\emaillink{jos_verlinde@hotmail.com}>
+        \item Jos Verlinde <\emaillink{jos\_verlinde@hotmail.com}>
         \item Angus Gratton <\emaillink{angus@redyak.com.au}>
     \end{itemize}
   }
@@ -227,15 +239,15 @@
     \begin{itemize}
         \item Gordon McDonnel
         \item Jeremy Parsons <\emaillink{jparsons@mantaro.com}>
-        \item Richard Nicholson <\emaillink{richard_n@earthlink.net}>
-    \end{itemize}
-  }
-  \cvcolumn{Personal}{
-    \begin{itemize}
+        \item Richard Nicholson <\emaillink{richard\_n@earthlink.net}>
     \end{itemize}
   }
 \end{cvcolumns}
-
+\begin{cvcolumns}
+  \cvcolumn{Family \& Friends}{
+    \input{personal-refs}
+  }
+\end{cvcolumns}
 % % Publications from a BibTeX file without multibib
 % %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
 % %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}

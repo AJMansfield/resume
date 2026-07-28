@@ -1,11 +1,13 @@
 .PHONY: all
 
+LATEXRUN := ./latexrun/latexrun --latex-cmd=lualatex
+
 all:
-	./latexrun/latexrun resume.tex
+	$(LATEXRUN) resume.tex
 
 %.pdf:
-	./latexrun/latexrun resume.tex -o $@
+	$(LATEXRUN) resume.tex -o $@
 
 clean:
-	./latexrun/latexrun --clean-all
+	$(LATEXRUN) --clean-all
 
