@@ -1,0 +1,15 @@
+name: Build LaTeX document
+
+on: [push]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    container:
+      image: rjected/clineresume:latest
+    steps:
+      - name: Set up Git repository and make resume
+        uses: actions/checkout@v1
+
+      - name: Build resume
+        run: make
