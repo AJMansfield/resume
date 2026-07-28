@@ -1,3 +1,9 @@
 [submodule "Cline-Resume"]
 	path = Cline-Resume
 	url = https://github.com/AJMansfield/Cline-Resume.git
+[submodule "Rensselaer"]
+	path = Rensselaer
+	url = https://github.com/Triple-L/CV_Resume_latex_template.git
+[submodule "latexrun"]
+	path = latexrun
+	url = https://github.com/aclements/latexrun.git
