@@ -4,17 +4,14 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
-
 \documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-\moderncvcolor{cerulean}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
+\moderncvcolor{green}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
 % moderncv themes
-\moderncvstyle[]{contemporary}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
+\moderncvstyle[]{casual}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
                                                    % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
-% adjust the page margins
 \usepackage[hmargin=0.5in,vmargin=10pt]{geometry}                  % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
 %\usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
@@ -65,43 +62,84 @@
 \makecvtitle
 
 \section{Experience}
-\subsection{Vocational}
-\cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}
-Detailed achievements:
+\cventry{2024--Present}{Open Source Contributor}{MicroPython}{\href{https://micropython.org/}{micropython.org}}{}{
 \begin{itemize}
-\item Achievement 1
-\item Achievement 2 (with sub-achievements)
-  \begin{itemize}
-  \item Sub-achievement (a);
-  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+    \item Implemented \href{https://peps.python.org/pep-0487/}{PEP 487 - Simpler customisation of class creation}.
     \begin{itemize}
-    \item Sub-sub-achievement i;
-    \item Sub-sub-achievement ii;
-    \item Sub-sub-achievement iii;
+        \item Documented requirements with automated test cases:
+            \href{https://github.com/micropython/micropython/pull/15500}{\#15500}.
+        \item Proposed multiple competing implementations:
+            \href{https://github.com/micropython/micropython/pull/15503}{\#15503},
+            \href{https://github.com/micropython/micropython/pull/16816}{\#16816},
+            \href{https://github.com/micropython/micropython/pull/17693}{\#17693}.
+        \item Minimized duplicated effort with git feature-branch workflows and topology.
+        \item Benchmarked comparisons using custom automated hardware-in-the-loop tests:
+            \href{https://github.com/micropython/micropython/pull/16825}{\#16825}.
+        \item Solicited and engaged with project leadership on comparative trade-offs regarding soft objectives.
+        \item Discovered and reported a novel bug in CPython:
+            \href{https://bugs.python.org/issue28797}{BPO-28797},
+            \href{https://github.com/python/cpython/issues/72983}{CPython\#72983}.
+        \item Applied embedded-specific architectural concepts to discover a far more refined path to implementation:
+            \href{https://github.com/micropython/micropython/pull/16806}{\#16806}.
+        \item Participated in code reviews to produce final merge-quality code \emph{and} commit history.
+        \item Communicated completion with downstream consumers:
+            \href{https://github.com/adafruit/circuitpython/issues/9685}{CircuitPython\#9685}.
     \end{itemize}
-  \item Sub-achievement (c);
-  \end{itemize}
-\item Achievement 3
-\item Achievement 4
+    \item Lowered defect rates across the board with combined statistical, technical, and human factors methods.
+    \begin{itemize}
+        \item Applied confusion matrix statistical measures to recommend targeted improvements to specific low-reliability processes:
+            \href{https://github.com/micropython/micropython/pull/17745}{\#17745},
+            \href{https://github.com/micropython/micropython/pull/17993}{\#17993}.
+        \item Reported on an emerging Normalization of Deviance issues among contributors:
+            \href{https://github.com/micropython/micropython/pull/18842\#issuecomment-3929430580}{\#18842}.
+        \item Led discussion and proposals around problems and technical and human-factors solutions:
+            \href{https://github.com/orgs/micropython/discussions/18844}{\#18844}.
+    \end{itemize}
+    \item Founded and led MicroPython's Triage Team.
+    \begin{itemize}
+        \item Raised initial concerns about volunteer morale and delays in MicroPython's Pull Request process:
+            \href{https://github.com/orgs/micropython/discussions/18844}{\#18844}.
+        \item Accepted official organization membership and appointment
+        to the resulting MicroPython \href{https://github.com/orgs/micropython/teams/triage-team}{Triage Team}.
+        \item Led development of team tooling, processes, and documentation:
+            \href{https://github.com/orgs/micropython/discussions/18878}{\#18878}.
+    \end{itemize}
 \end{itemize}}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2\newline{}Description line 3}
-\subsection{Miscellaneous}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description}
 
-\section{Languages}
-\cvitemwithcomment{Language 1}{Skill level}{Comment}
-\cvitemwithcomment{Language 2}{Skill level}{Comment}
-\cvitemwithcomment{Language 3}{Skill level}{Comment}
-\cvitemwithcomment{Language 4}{Skill level}{Comment}
+\cventry{2017--Present}{Senior Software Engineer}{Mantaro}{Germantown, MD}{}{
+\begin{itemize}
+    \item Designed custom circuitry.
+    \item Laid out dense 10-layer circuit boards.
+    \item Developed security-critical low-level firmware.
+    \item Implemented low-level network protocols.
+    \item Programmed in C, Python, Rust.
+    \item Engineered high-reliability multi-path radios.
+    \item Architected and implemented cryptographic protocols for IoT.
+    \item Reverse-engineered obsolete domain-specific languages to update old products.
+    \item Programmed in C, Python, PHP, Reach SLDC, TI DSP assembly.
+\end{itemize}}
 
-\section{Computer skills}
-\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
-\cvtripleitem{category 4}{XYZ}{category 5}{XYZ}{category 6}{XYZ}
+\cventry{2016--2016}{Dell On-Site Technician}{Unisys}{Washington D.C.}{}{
+\begin{itemize}
+    \item Traveled to customer sites.
+    \item Performed warranty service and parts-level repairs.
+    \item Serviced Dell laptops, tablets, and desktop computers.
+\end{itemize}}
+
+\cventry{2013--2014}{Apprentice Plumber}{Mallick Mechanicl}{Bethesda, MD}{}{
+\begin{itemize}
+\item Installed large scale (>18 in) cast iron drain pipework.
+\item Installed and brazed copper refrigeration pipework.
+\item Installed commercial bathroom fixtures.
+\item Performed other commercial high-rise construction tasks.
+\end{itemize}}
+
+\section{Education}
+\cventry{2015--2017}{B.S. Computer Engineering (incomplete)}{Brigham Young University}{Salt Lake City, UT}{}{}
+\cventry{2010--2014}{High School Diploma}{Poolesville High School}{Poolesville, MD}{}{}
+
 
 \section{Skill matrix}
-\cvitem{Skill matrix}{Alternatively, provide a skill matrix to show off your skills}
 %% Skill matrix as an alternative to rate one's skills, computer or other.
 
 %% Adjusts width of skill matrix columns.
@@ -109,7 +147,7 @@ Detailed achievements:
 %% <width>, <exp_width> should be lengths smaller than \textwidth, <factor> needs to be between 0 and 1.
 %% Examples:
 % \setcvskillcolumns[5em][][]%    adjust first column. Same as \setcvskillcolumns[5em]
-% \setcvskillcolumns[][0.45][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
+\setcvskillcolumns[][0.3][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
 % \setcvskillcolumns[][][\widthof{``Year''}]%     adjust fourth (years) column.
 % \setcvskillcolumns[][0.45][\widthof{``Year''}]%
 % \setcvskillcolumns[\widthof{``Languag''}][0.48][]
@@ -125,7 +163,7 @@ Detailed achievements:
 %% Add a legend if you are using \cvskill{<1-5>} command or \cvskillentry
 %% Usage \cvskilllegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
 % \cvskilllegend % insert default legend without lines
-\cvskilllegend*[1em]{}% adjust post spacing
+% \cvskilllegend*[1em]{}% adjust post spacing
 % \cvskilllegend*{Legend}%  Alternatively add a description string
 %% adjust the legend entries for other languages, here German
 % \cvskilllegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte\,/\,Spezialist]{Legende}
@@ -145,76 +183,99 @@ Detailed achievements:
 
 %% \cvskillentry[*][<post_padding>]{<skill_cathegory>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}%
 %% Example usages:
-\cvskillentry*{Language:}{3}{Python}{2}{I'm so experienced in Python and have realised a million projects. At least.}
-\cvskillentry{}{2}{Lilypond}{14}{So much sheet music! Man, I'm the best!}
-\cvskillentry{}{3}{\LaTeX}{14}{Clearly I rock at \LaTeX}
-\cvskillentry*{OS:}{3}{Linux}{2}{I only use Archlinux btw}% notice the use of the starred command and the optional
-\cvskillentry*[1em]{Methods}{4}{SCRUM}{8}{SCRUM master for 5 years}
+\cvskillentry*{Languages:}{5}{Python}{18}{May our bytecode run a thousand years!}
+\cvskillentry{}{5}{C}{15}{Stars in the void, point to registers you've never \emph{dreamed}.}
+\cvskillentry{}{4}{C++}{10}{Take comfort in the control flow you \emph{can't} find.}
+\cvskillentry{}{3}{Rust}{2}{Where we go, safety cannot always. Embedded is no place for fear.}
+\cvskillentry{}{3}{JavaScript}{5}{Compiled from TypeScript, ideally.}
+\cvskillentry{}{2}{PHP}{3}{Horses for courses; or camels, as it were.}
+\cvskillentry{}{2}{SQL}{2}{The ORM has betrayed me, and it's sure to again.}
+\cvskillentry{}{2}{\LaTeX}{2}{As demonstrated.}
+\cvskillentry{}{2}{Java}{2}{We've all modded minecraft a \emph{little,} right?}
+\cvskillentry*{Platforms:}{5}{MicroPython}{6}{I know least, parts of myself left behind to create it.}
+\cvskillentry{}{5}{Linux}{7}{Vendor BSPs are a form of aposomatic coloration.}
+\cvskillentry{}{4}{SQLite}{6}{Best database.}
+\cvskillentry{}{4}{BusyBox}{5}{Your first mistake is assuming \emph{GNU}/Linux.}
+\cvskillentry{}{3}{Yocto}{2}{Best Linux distribution for embedded firmware.}
+\cvskillentry{}{3}{Zephyr}{2}{Best RTOS.}
+\cvskillentry*{OS:}{5}{Linux}{20}{Year of the Linux Desktop? Please?}
+\cvskillentry{}{4}{Windows}{25}{At least with WSL it \emph{kinda} runs everything.}
+\cvskillentry*{EDA:}{4}{KiCAD}{2}{KiCad 11 geometric constraints, eagerly awaited.}
+\cvskillentry{}{3}{Altium}{2}{It's the default for reasons \emph{other} than being good.}
+\cvskillentry{}{4}{EasyEDA}{4}{Easy instead of featureful.}
+\cvskillentry{}{3}{TopoR}{1}{The \emph{only} good pcb autorouter.}
+\cvskillentry*{CAD:}{4}{OnShape}{2}{Excellent scripting interface, too.}
+\cvskillentry{}{4}{Fusion 360}{4}{Better brep kernel than OnShape.}
+
 %% \cvskill{<0-5>} command
 % \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
 
 \section{Interests}
-\cvitem{hobby 1}{Description}
-\cvitem{hobby 2}{Description}
-\cvitem{hobby 3}{Description}
-
-\section{Extra 1}
-\cvlistitem{Item 1}
-\cvlistitem{Item 2}
-\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
-
-\section{Extra 2}
-\cvlistdoubleitem{Item 1}{Item 4}
-\cvlistdoubleitem{Item 2}{Item 5\cite{book2}}
-\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+\cvitem{Writing}{Science fiction and fantasy by choice, but writing is the same as anything else.}
+\cvitem{Cooking}{Candy, pies, fried, baked, grilled, stewed. Spicy is a tool, not the point.}
 
 \section{References}
 \begin{cvcolumns}
-  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
-  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
-  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+  \cvcolumn{MicroPython}{
+    \begin{itemize}
+        \item Damien George <\emaillink{damien@micropython.org}>
+        \item Jos Verlinde <\emaillink{jos_verlinde@hotmail.com}>
+        \item Angus Gratton <\emaillink{angus@redyak.com.au}>
+    \end{itemize}
+  }
+  \cvcolumn{Mantaro}{
+    \begin{itemize}
+        \item Gordon McDonnel
+        \item Jeremy Parsons <\emaillink{jparsons@mantaro.com}>
+        \item Richard Nicholson <\emaillink{richard_n@earthlink.net}>
+    \end{itemize}
+  }
+  \cvcolumn{Personal}{
+    \begin{itemize}
+    \end{itemize}
+  }
 \end{cvcolumns}
 
-% Publications from a BibTeX file without multibib
-%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
-%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+% % Publications from a BibTeX file without multibib
+% %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+% %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+% \nocite{*}
+% \bibliographystyle{plain}
+% \bibliography{publications}                        % 'publications' is the name of a BibTeX file
 
-% Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+% % Publications from a BibTeX file using the multibib package
+% %\section{Publications}
+% %\nocitebook{book1,book2}
+% %\bibliographystylebook{plain}
+% %\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+% %\nocitemisc{misc1,misc2,misc3}
+% %\bibliographystylemisc{plain}
+% %\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
 \clearpage
-%-----       letter       ---------------------------------------------------------
-% recipient data
-\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-\date{January 01, 1984}
-\subject{Job application}
-\opening{Dear Sir or Madam,}
-\closing{Yours faithfully,}
-\signature{0.9}{signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
-\postscript{An optional postscript}                % optional, add a postscript
-\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-\makelettertitle
+% %-----       letter       ---------------------------------------------------------
+% % recipient data
+% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+% \date{January 01, 1984}
+% \subject{Job application}
+% \opening{Dear Sir or Madam,}
+% \closing{Yours faithfully,}
+% \signature{0.9}{signature.png}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
+% \postscript{An optional postscript}                % optional, add a postscript
+% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+% \makelettertitle
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
 
-Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum various nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus various blandit.
+% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum various nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus various blandit.
 
-Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim various pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim various pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
 
-Albert Einstein discovered that $e=mc^2$ in 1905.
+% Albert Einstein discovered that $e=mc^2$ in 1905.
 
-\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
 
-\makeletterclosing
+% \makeletterclosing
 
 %\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
