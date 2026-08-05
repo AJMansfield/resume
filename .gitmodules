@@ -1,3 +1,9 @@
 [submodule "latexrun"]
 	path = latexrun
 	url = https://github.com/aclements/latexrun.git
+[submodule "moderncv"]
+	path = moderncv
+	url = https://github.com/moderncv/moderncv.git
+[submodule "fontawesome7"]
+	path = fontawesome7
+	url = https://github.com/braniii/fontawesome.git
