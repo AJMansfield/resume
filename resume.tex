@@ -1,27 +1,31 @@
 
-\documentclass[11pt,letterpaper,sans]{moderncv}
+\documentclass[11pt,letterpaper,sans]{./moderncv/moderncv}
 % possible options include font size ('10pt', '11pt' and '12pt'),
 % paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape'),
 % and font family ('sans' and 'roman')
 
+\pagestyle{fancy}
+
 % moderncv theme
-\moderncvcolor{green}
+\moderncvcolor{cerulean}
 % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 % for contemporary style use 'cerulean'
 
-\moderncvstyle[]{classic}
+% \moderncvstyle[details]{casual}
+\moderncvstyle[]{contemporary}
 % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
 % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
 
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 
-\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+\usepackage[hmargin=0.3in,vmargin=10pt]{geometry}
 % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
 
 %\usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 %\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
+
 
 % the 'contemporary' style allows to append additional elements to the head background; uncomment and customize if needed
 %\def\@moderncvheadBackground{
@@ -54,6 +58,22 @@
 % document language
 \usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
 
+\newcommand{\angnote}[1]{%
+    {\tiny\textlangle#1\textrangle}%
+}
+\newcommand{\ghpr}[3]{%
+    \angnote{\href{https://github.com/#1/#2/pull/#3}{#2\##3}}%
+}
+\newcommand{\ghprfull}[3]{%
+    \angnote{\href{https://github.com/#1/#2/pull/#3}{#1/#2\##3}}%
+}
+\newcommand{\mppr}[1]{%
+    \angnote{\href{https://github.com/micropython/micropython/pull/#1}{\##1}}%
+}
+
+\newcommand{\emailreference}[3]{%
+    \href{mailto:#3?subject=Reference\%20Request\%20for\%20Anson\%20Mansfield\&body=Dear\%20#1\%2C}{#2 \textlangle\texttt{#3}\textrangle}%
+}
 
 % personal data
 \input{personal-info}
@@ -63,94 +83,177 @@
 \email{anson@ajmansfield.xyz}
 \social[linkedin]{ajmansfield1}
 \social[github]{AJMansfield}
+\social[gitlab]{anson.mansfield}
 \social[stackoverflow]{1324631/ajmansfield}
 \social[discord]{AJMansfield\#5742}
 
 \begin{document}
 \makecvtitle
 
+Experienced embedded electronics engineer eager for challenging technical work. 
+
+Left hand on the oscilloscope probe; right hand on the keyboard.
+
 \section{Experience}
-\cventry{2024--Present}{Open Source Contributor}{MicroPython}{}{\href{https://micropython.org/}{micropython.org}}{
-Implemented \href{https://peps.python.org/pep-0487/}{PEP 487 - Simpler customisation of class creation}.
+\cventry{2024--current}{Triage Test Engineer}{MicroPython}{Open Source}{\href{https://micropython.org/}{micropython.org}}{
+\textbf{PEP487:} Implemented \href{https://peps.python.org/pep-0487/}{PEP 487 -- Simpler customisation of class creation}.
 \begin{itemize}
-    \item Documented requirements with automated test cases:
-        \href{https://github.com/micropython/micropython/pull/15500}{\#15500}.
-    \item Proposed multiple competing implementations:
-        \href{https://github.com/micropython/micropython/pull/15503}{\#15503},
-        \href{https://github.com/micropython/micropython/pull/16816}{\#16816},
-        \href{https://github.com/micropython/micropython/pull/17693}{\#17693}.
+    \item Documented requirements with automated test cases. \mppr{15500}
+    \item Proposed multiple competing implementations. \mppr{15503} \mppr{16816} \mppr{17693}
     \item Minimized duplicated effort with git feature-branch workflows and topology.
-    \item Benchmarked comparisons using custom automated hardware-in-the-loop tests:
-        \href{https://github.com/micropython/micropython/pull/16825}{\#16825}.
+    \item Benchmarked comparisons using custom automated hardware-in-the-loop tests. \mppr{16825}
     \item Solicited and engaged with project leadership on comparative trade-offs regarding soft objectives.
-    \item Discovered and reported a novel bug in CPython:
-        \href{https://bugs.python.org/issue28797}{BPO-28797},
-        \href{https://github.com/python/cpython/issues/72983}{CPython\#72983}.
-    \item Engineered a final no-compromises version using embedded-specific memory layouts:
-        \href{https://github.com/micropython/micropython/pull/16806}{\#16806}.
+    \item Discovered and reported a novel bug in CPython.
+        \angnote{\href{https://bugs.python.org/issue28797}{BPO-28797}} \ghpr{python}{CPython}{72983}
+    \item Engineered a final no-compromises version using embedded-specific memory layouts. \mppr{16806}
     \item Participated in code reviews and revised into merge-quality code \emph{and} commit history.
-    \item Communicated completion with downstream projects:
-        \href{https://github.com/adafruit/circuitpython/issues/9685}{CircuitPython\#9685}.
+    \item Communicated completion with downstream projects. \ghpr{adafruit}{CircuitPython}{9685}
 \end{itemize}
-Lowered defect rates across the board with combined statistical, technical, and human factors methods.
+\textbf{Testing:} Lowered defect rates with combined statistical, technical, and human factors methods.
 \begin{itemize}
-    \item Identified low-reliability test processes using confusion matrix statistics:
-        \href{https://github.com/micropython/micropython/pull/17745}{\#17745},
-        \href{https://github.com/micropython/micropython/pull/17993}{\#17993}.
-    \item Reported on an emerging Normalization of Deviance issues among contributors:
-        \href{https://github.com/micropython/micropython/pull/18842\#issuecomment-3929430580}{\#18842}.
-    \item Led discussion and proposals around problems and technical and human-factors solutions:
-        \href{https://github.com/orgs/micropython/discussions/18844}{\#18844}.
+    \item Identified low-reliability test processes using confusion matrix statistics. \mppr{17745} \mppr{17993}
+    \item Reported on an emerging Normalization of Deviance issues among contributors.
+        \angnote{\href{https://github.com/micropython/micropython/pull/18842\#issuecomment-3929430580}{\#18842}}
+    \item Led discussion and proposals around problems and technical and human-factors solutions.
+        \angnote{\href{https://github.com/orgs/micropython/discussions/18844}{\#18844}}
 \end{itemize}
-Founded and led MicroPython's Triage Team.
+\textbf{Compiler Explorer:} \href{https://python.compiler-explorer.com/z/vveG3o45d}{Added MicroPython to Godbolt Compiler Explorer.}
 \begin{itemize}
-    \item Raised initial concerns about volunteer morale and delays in MicroPython's Pull Request process:
-        \href{https://github.com/orgs/micropython/discussions/18844}{\#18844}.
-    \item Accepted official organization membership and appointment
-    to the resulting MicroPython \href{https://github.com/orgs/micropython/teams/triage-team}{Triage Team}.
-    \item Led development of team tooling, processes, and documentation:
-        \href{https://github.com/orgs/micropython/discussions/18878}{\#18878}.
+    \item Updated MicroPython's disassembler to emit godbolt-format disassembly JSON. \mppr{18381}
+    \item Deployed suitable CI/CD build containers and compiler artifacts.
+        \ghpr{compiler-explorer}{misc-builder}{117} \ghpr{compiler-explorer}{compiler-workflows}{43} \ghpr{compiler-explorer}{infra}{1888}
+    \item Extended CE code to invoke MicroPython cross-compiler and disassembler.
+        \ghpr{compiler-explorer}{compiler-explorer}{8256}
+    \item Bundled offline package cache for full functionality. \ghpr{compiler-explorer}{misc-builder}{125} \ghpr{compiler-explorer}{misc-builder}{126}
+\end{itemize}
+\textbf{Triage Team:} \href{https://github.com/orgs/micropython/teams/triage-team}{Founded and led 10-person MicroPython's Triage Team.}
+\begin{itemize}
+    \item Analyzed volunteer morale problems \& PR process delays behind them.
+        \angnote{\href{https://github.com/orgs/micropython/discussions/18844}{\#18844}}
+    \item Proposed the creation of the resulting Triage Team to resolve it.
+    \item Offered and accepted appointment as one of the team's initial members.
+    \item Led development of team processes, tooling, and process documentation.
+        \angnote{\href{https://github.com/orgs/micropython/discussions/18878}{\#18878}}
 \end{itemize}
 }
 
-\cventry{2017--Present}{Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
+\cventry{2017--current}{Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
+\textbf{Weinberg:} Built brain-scanning sensor packages to operate in an extreme MRI magnetic environment.
 \begin{itemize}
-    \item Designed custom circuitry and devices.
-    \item Laid out dense 10-layer circuit boards.
-    \item Developed security-critical low-level firmware.
-    \item Implemented low-level network protocols from specifications.
-    \item Engineered high-reliability multi-path radios.
-    \item Architected and implemented IoT cryptographic suites.
-    \item Reverse-engineered obsolete domain-specific languages to update old products.
-\end{itemize}}
+    \item Designed and implemented circuitry for a PoE powered device.
+    \item Designed and laid out a dense 10-layer PCB.
+    \item Wrote procedures to resolve unexpected part availability challenges and maintain project schedule.
+\end{itemize}
+\textbf{Patton:} Built secure VoIP and smartphone KVM systems.
+\begin{itemize}
+    \item Ported Linux ethernet drivers to a non-standard Linux BSP driver framework.
+    \item Hand-wired prototype display adapters with high-speed differential signaling.
+    \item Developed MicroPython-based baseboard firmware to operate and easily debug large complex PCBs.
+    \item Wrote software to coordinate a KVM pipeline:  MIPI-DSI, codecs, SFP ethernet, DisplayPort, USB-C.
+    \item Accelerated boot times by parallelizing device blob uploads over multiple bandwidth-limited wire busses.
+    \item Managed prototype circuitry changes and firmware version skew via an ISO 9000 ECN process.
+\end{itemize}
+\textbf{Sentinel:} Built a platform for advanced network intrusion defense.
+\begin{itemize}
+    \item Developed tooling to present K8s-based honeypot containers without low-level network timing tells.
+    \item Implemented ARP from scratch with extra non-\href{https://datatracker.ietf.org/doc/html/rfc6747}{RFC6747}
+        behaviors oriented around network-wide defense.
+    \item Architected an X.509 extension for pay-by-usage software licensing compatible with airgapped systems.
+\end{itemize}
+\textbf{Cornerstone:} Built various tools and technologies for ``censorship resistance''.
+\begin{itemize}
+    \item Developed low-level firmware for the Intel x86 Management Engine platform.
+    \item Designed and fabricated miniturized circuitry for multi-IoT-technology portable radios.
+    \item Developed MicroPython-based firmware to bridge incompatible IoT and conventional transports.
+    \item Developed pre-\href{https://csrc.nist.gov/pubs/sp/800/232/final}{NIST SP 800-232} lightweight
+        cryptographic primitives for low-MTU transports.
+    \item Integrated software into military versions of \href{www.civtak.org/atak-about/}{Android Tactical Assault Kit}.
+\end{itemize}
+}
 
-\cventry{2016--2016}{Dell On-Site Technician}{Unisys}{Washington DC}{\href{https://www.unisys.com/partners/dell/}{unisys.com}}{
+\cventry{}{}{}{}{}{}
+\newpage
+\makecvhead
+
+\cventry{(continued)}{Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
+\textbf{Cornerstone:} (continued)
+\begin{itemize}
+    \item Invented the unpublished Indigo network routing protocol.
+    \item Invented other controlled unclassified technologies (ask for detail).
+    \item Participated by invitation in the Technical Support and Operational Analysis TSOA 18-1 conference.
+    \item Participated in Navy JVAB evaluation of Indigo and other technologies with positive security results.
+\end{itemize}
+\textbf{Acoustic Sentri:} Modernized audio interferometry gunshot detector system.
+\begin{itemize}
+    \item Reverse-engineered obsolete DSP firmware to port to new chip revisions in updated designs.
+    \item Developed RPi-based proxy service to adapt sensors to new standards like ONVIF for local camera pointing.
+    \item Traveled internationally to facilitate customer demonstrations of the system.
+    \item Integrated the sensors with existing systems for the Baltimore Police Department.
+\end{itemize}
+}
+
+\cventry{2015--2017}{Computer Engineering}{Brigham Young University}{Salt Lake City UT}{}{}
+
+\cventry{2016}{Dell On-Site Technician}{Unisys}{Washington DC}{\href{https://www.unisys.com/partners/dell/}{unisys.com}}{
 \begin{itemize}
     \item Traveled to customer sites.
     \item Performed warranty service and parts-level repairs.
     \item Serviced Dell laptops, tablets, and desktop computers.
-\end{itemize}}
+\end{itemize}
+}
+
+\cventry{2014--2015}{Engineering}{Montgomery Community College}{Rockville MD}{}{}
 
 \cventry{2013--2014}{Apprentice Plumber}{Mallick Mechanical}{Bethesda MD}{\href{https://mallickmechanical.com/}{mallickmechanical.com}}{
-New Commercial High Rise Construction
+\textbf{Pike \& Rose:} New commercial high-rise construction.
 \begin{itemize}
-\item Installed large cast iron drain pipework (up to 24" diameter).
-\item Installed soldered copper water pipework.
-\item Installed brazed copper refrigeration pipework.
-\item Installed commercial bathroom fixtures.
+    \item Installed large cast iron drain pipework (up to 24" diameter).
+    \item Installed soldered copper water pipework.
+    \item Installed brazed copper refrigeration pipework.
+    \item Installed commercial bathroom fixtures.
 \end{itemize}}
 
-\section{Education}
-\cventry{2015--2017}{Brigham Young University}{Computer Engineering Course Credit}{Salt Lake City UT}{}{}
-\cventry{2014--2015}{Montgomery Community College}{Engineering Course Credit}{Rockville MD}{}{}
-\cventry{2010--2014}{Poolesville High School}{High School Diploma}{Poolesville MD}{}{}
+\cventry{2014}{Eagle Scout}{Boy Scouts of America}{National Capitol Area Council, Troop 1300}{}{}
 
-\section{Interests}
-\cvitem{Writing}{Science fiction and fantasy by choice, but writing is the same as anything else.}
-\cvitem{Cooking}{Candy, pies, fried, baked, grilled, stewed. Spicy is a tool, not the point.}
+\cventry{2010--2014}{High School Diploma}{Poolesville High School}{Poolesville MD}{}{
+\begin{itemize}
+    \item G\"{o}del Award for Mathematics.
+\end{itemize}
+}
+
+\section{References}
+\setlength{\hintscolumnwidth}{0em}
+
+\begin{cvcolumns}
+  \cvcolumn{MicroPython}{
+    \begin{itemize}
+        \item \emailreference{Damien\%20George}{Damien George}{damien@micropython.org}
+        %\item \emailreference{Jos\%20Verlinde}{Jos Verlinde}{jos\_verlinde@hotmail.com}
+        \item \emailreference{Angus\%20Gratton}{Angus Gratton}{angus@redyak.com.au}
+        \item \emailreference{Alessandro\%20Gatti}{Alessandro Gatti}{a.gatti@frob.it}
+    \end{itemize}
+  }
+  \cvcolumn{Mantaro}{
+    \begin{itemize}
+        \item \emailreference{Gordon\%20McDonnel}{Gordon McDonnel}{gordon@ursamining.com}
+        \item \emailreference{Jeremy\%20Parsons}{Jeremy Parsons}{jparsons@mantaro.com}
+        \item \emailreference{Richard\%20Nicholson}{Richard Nicholson}{richard\_n@earthlink.net}
+    \end{itemize}
+  }
+\end{cvcolumns}
+\begin{cvcolumns}
+  \cvcolumn{Family \& Friends}{
+    \input{personal-refs}
+  }
+\end{cvcolumns}
+\setlength{\hintscolumnwidth}{5em}
+
 
 \newpage
 \makecvhead
+
+% \newpage
+% \makecvhead
 \section{Skill matrix}
 %% Skill matrix as an alternative to rate one's skills, computer or other.
 
@@ -159,11 +262,11 @@ New Commercial High Rise Construction
 %% <width>, <exp_width> should be lengths smaller than \textwidth, <factor> needs to be between 0 and 1.
 %% Examples:
 % \setcvskillcolumns[5em][][]%    adjust first column. Same as \setcvskillcolumns[5em]
-\setcvskillcolumns[][0.3][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
+\setcvskillcolumns[][0.32][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
 % \setcvskillcolumns[][][\widthof{``Year''}]%     adjust fourth (years) column.
 % \setcvskillcolumns[][0.45][\widthof{``Year''}]%
-% \setcvskillcolumns[\widthof{``Languag''}][0.48][]
-% \setcvskillcolumns[\widthof{``Languag''}]%
+% \setcvskillcolumns[\widthof{``Language''}][0.48][]
+% \setcvskillcolumns[\widthof{``Language''}]%
 
 %% Adjusts width of legend columns. Usage \setcvskilllegendcolumns[<width>][<factor>]
 %% <factor> needs to be between 0 and 1. <width> should be a length smaller than \textwidth
@@ -178,14 +281,14 @@ New Commercial High Rise Construction
 % \cvskilllegend*[1em]{}% adjust post spacing
 % \cvskilllegend*{Legend}%  Alternatively add a description string
 %% adjust the legend entries for other languages, here German
-% \cvskilllegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte\,/\,Spezialist]{Legende}
+% \cvskilllegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte\,/\,Spezialist]{Legend}
 
 %% Alternative legend style with the first three skill levels in one column
 %% Usage \cvskillplainlegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
 % \setcvskilllegendcolumns[][0.6]%  works for classic, casual, banking
 % \setcvskilllegendcolumns[][0.55]%  works better for oldstyle and fancy
 % \cvskillplainlegend{}
-% \cvskillplainlegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte/Guru]{Legende}
+% \cvskillplainlegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte/Guru]{Legend}
 
 %% Add a head of the skill matrix table with descriptions.
 %% Usage \cvskillhead[<post_padding>][<Level>][<Skill>][<Years>][<Comment>]%
@@ -193,7 +296,7 @@ New Commercial High Rise Construction
 %% Adjust head of the skill matrix for other languages
 % \cvskillhead[0.25em][Level][F\"ahigkeit][Jahre][Bemerkung]
 
-%% \cvskillentry[*][<post_padding>]{<skill_cathegory>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}%
+%% \cvskillentry[*][<post_padding>]{<skill_category>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}%
 %% Example usages:
 \cvskillentry*{Languages:}{5}{Python}{18}{May our bytecode run a thousand years!}
 \cvskillentry{}{5}{C}{15}{Stars in the void, point to registers you've never \emph{dreamed}.}
@@ -218,32 +321,18 @@ New Commercial High Rise Construction
 \cvskillentry{}{3}{TopoR}{1}{The \emph{only} good pcb autorouter.}
 \cvskillentry*{CAD:}{4}{OnShape}{2}{Excellent scripting interface; my preference.}
 \cvskillentry{}{4}{Fusion 360}{4}{Better brep geometry kernel than OnShape.}
+\cvskillentry*{Making:}{4}{µSoldering}{10}{Happiness is 0603 or larger with lots of flux.}
+\cvskillentry{}{3}{3D Printing}{6}{So many slicer settings, so little time.}
+\cvskillentry{}{4}{CNC Machining}{2}{Only the second worst kind of chip.}
+
+\section{Interests}
+\cvitem{Writing}{Science fiction and fantasy by choice, but writing is the same as anything else.}
+\cvitem{Cooking}{Candy, pies, fried, baked, grilled, stewed. Spicy is a tool, not the point.}
 
 %% \cvskill{<0-5>} command
 % \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
 
-\section{References}
-\begin{cvcolumns}
-  \cvcolumn{MicroPython}{
-    \begin{itemize}
-        \item Damien George <\emaillink{damien@micropython.org}>
-        \item Jos Verlinde <\emaillink{jos\_verlinde@hotmail.com}>
-        \item Angus Gratton <\emaillink{angus@redyak.com.au}>
-    \end{itemize}
-  }
-  \cvcolumn{Mantaro}{
-    \begin{itemize}
-        \item Gordon McDonnel
-        \item Jeremy Parsons <\emaillink{jparsons@mantaro.com}>
-        \item Richard Nicholson <\emaillink{richard\_n@earthlink.net}>
-    \end{itemize}
-  }
-\end{cvcolumns}
-\begin{cvcolumns}
-  \cvcolumn{Family \& Friends}{
-    \input{personal-refs}
-  }
-\end{cvcolumns}
+
 % % Publications from a BibTeX file without multibib
 % %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
 % %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
@@ -260,7 +349,7 @@ New Commercial High Rise Construction
 % %\bibliographystylemisc{plain}
 % %\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
-\clearpage
+% \clearpage
 % %-----       letter       ---------------------------------------------------------
 % % recipient data
 % \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
