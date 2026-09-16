@@ -1,0 +1,22 @@
+\newcommand{\angnote}[1]{%
+    {\tiny\textlangle#1\textrangle}%
+}
+\newcommand{\ghpr}[3]{%
+    \angnote{\href{https://github.com/#1/#2/pull/#3}{#2\##3}}%
+}
+\newcommand{\ghprfull}[3]{%
+    \angnote{\href{https://github.com/#1/#2/pull/#3}{#1/#2\##3}}%
+}
+\newcommand{\mppr}[1]{%
+    \angnote{\href{https://github.com/micropython/micropython/pull/#1}{\##1}}%
+}
+
+\newcommand{\emailreference}[3]{%
+    \href{mailto:#3?subject=Reference\%20Request\%20for\%20Anson\%20Mansfield\&body=Dear\%20#1\%2C}{#2 \textlangle\texttt{#3}\textrangle}%
+}
+\newcommand{\textreference}[3]{%
+    \href{#1}{\textlangle#2\textrangle}%
+}
+\newcommand{\linkreference}[3]{%
+    \href{#1}{\textlangle\texttt{#2}\textrangle}%
+}

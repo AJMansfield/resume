@@ -26,65 +26,18 @@
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 %\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
 
-
 % the 'contemporary' style allows to append additional elements to the head background; uncomment and customize if needed
 %\def\@moderncvheadBackground{
 %}
 
-\usepackage{microtype}
-% font loading
-% for luatex and xetex, do not use inputenc and fontenc
-% see https://tex.stackexchange.com/a/496643
-\ifxetexorluatex
-  \usepackage{fontspec}
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX}
-  \setmainfont{Latin Modern Roman}
-  \setsansfont{Latin Modern Sans}
-  \setmonofont{Latin Modern Mono}
-  \setmathfont{Latin Modern Math}
+% basic fonts and package setup
+\input{doc-setup}
 
-  % you may also consider Fira Sans Light for a extra modern look
-%   \setsansfont[ItalicFont={Fira Sans Light Italic},%
-%             BoldFont={Fira Sans},%
-%             BoldItalicFont={Fira Sans Italic}]%
-%             {Fira Sans Light}%
-\else
-  \usepackage[utf8]{inputenc}
-  \usepackage[T1]{fontenc}
-  \usepackage{lmodern}
-\fi
-
-% document language
-\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
-
-\newcommand{\angnote}[1]{%
-    {\tiny\textlangle#1\textrangle}%
-}
-\newcommand{\ghpr}[3]{%
-    \angnote{\href{https://github.com/#1/#2/pull/#3}{#2\##3}}%
-}
-\newcommand{\ghprfull}[3]{%
-    \angnote{\href{https://github.com/#1/#2/pull/#3}{#1/#2\##3}}%
-}
-\newcommand{\mppr}[1]{%
-    \angnote{\href{https://github.com/micropython/micropython/pull/#1}{\##1}}%
-}
-
-\newcommand{\emailreference}[3]{%
-    \href{mailto:#3?subject=Reference\%20Request\%20for\%20Anson\%20Mansfield\&body=Dear\%20#1\%2C}{#2 \textlangle\texttt{#3}\textrangle}%
-}
-\newcommand{\textreference}[3]{%
-    \href{#1}{\textlangle#2\textrangle}%
-}
-\newcommand{\linkreference}[3]{%
-    \href{#1}{\textlangle\texttt{#2}\textrangle}%
-}
+% shortcut commands
+\input{macros}
 
 % personal data
 \input{personal-info}
-
-% less-personal data
 
 
 \begin{document}
