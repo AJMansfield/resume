@@ -3,7 +3,7 @@
 LATEXRUN := TEXINPUTS=.:./moderncv//:$$TEXINPUTS ./latexrun/latexrun --latex-cmd=lualatex
 SOURCES := personal-info.tex personal-refs.tex
 
-all: Anson-Mansfield-tech.pdf
+all: Anson-Mansfield-tech.pdf Anson-Mansfield-trades.pdf
 
 install-deps:
 	cd ./fontawesome7/ && (echo y | ./local_install.sh)
