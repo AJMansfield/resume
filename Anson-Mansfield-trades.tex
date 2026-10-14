@@ -18,11 +18,12 @@
 
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 
-\usepackage[hmargin=0.5in,vmargin=0.5in]{geometry}
+% \usepackage[hmargin=0.5in,vmargin=0.5in]{geometry}
 % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
 
-%\usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+\usepackage[left=0.35in,right=0.8in,top=0.8in,bottom=0.8in]{geometry}
+\usepackage{changepage}
+\setlength{\hintscolumnwidth}{6em}                % if you want to change the width of the column with the dates
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 %\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
 
@@ -43,32 +44,39 @@
 \begin{document}
 \makecvtitle
 
-Software engineer keen to leave the cubicle and return to their roots in proper trades work.
+\begin{adjustwidth}{0.05\textwidth+0.4in}{0.1\textwidth}% 1em left, 2em right
+    Hands-on hardware engineer and former commercial plumbing and electrical apprentice
+    seeking to contribute field experience, MEP coordination, equipment troubleshooting, and technical discipline
+    to commercial mechanical construction.
+\end{adjustwidth}
+% %Software engineer keen to leave the cubicle and return to their roots in proper trades work.
+
 
 \section{Experience}
-\cventry{2024--current}{Test Engineer}{MicroPython}{Open Source}{\href{https://micropython.org/}{micropython.org}}{
+\cventry{2024 -- \smallup{current}}{Test Engineer}{MicroPython}{Open Source}{\href{https://micropython.org/}{micropython.org}}{
 \begin{itemize}
-    \item Diagnosed and resolved complex hardware and software defects through systematic testing.
-    \item Built and used automated hardware-in-the-loop test setups to verify equipment performance.
-    \item Documented procedures, test results, and repair requirements clearly and consistently.
-    \item Coordinated with a 10-person triage team to prioritize issues and improve work processes.
+    \item Diagnosed and resolved complex hardware/software defects with systematic testing.
+    \item Built and used automated hardware-in-the-loop test tools to verify equipment.
+    \item Documented test results and functional requirements clearly and consistently.
+    \item Coordinated a 10-person triage team to prioritize issues and improve work processes.
     \item Reviewed completed work for quality, reliability, and readiness for use.
 \end{itemize}
 }
 
-\cventry{2017--current}{Senior Software Engineer / Hardware Technician}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
+\cventry{2017 -- \smallup{current}}{Senior Embedded Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
 \begin{itemize}
     \item Built, tested, repaired, and debugged electronic devices and prototype equipment.
-    \item Designed and assembled powered equipment, control circuitry, sensor packages, and wiring assemblies.
-    \item Hand-wired prototype adapters and performed detailed troubleshooting of complex electrical systems.
-    \item Used drawings, documentation, and change-control procedures to manage equipment modifications.
+    \item Designed and assembled powered equipment, control circuitry, sensor packages.
+    \item Hand-wired and micro-soldered prototype adapters and wiring assemblies.
+    \item Troubleshot complex one-of-one prototype equipment.
+    \item Documented equipment modifications with formal change-control procedures.
     \item Solved material and part-availability problems while keeping projects on schedule.
-    \item Reverse-engineered and updated older equipment to support replacement parts and newer components.
-    \item Supported installation, customer demonstrations, and integration of equipment at client sites.
+    \item Reverse-engineered old out-of-production parts to replace with new equivalents.
+    \item Supported customer demos, installs, and integrations at international client sites.
 \end{itemize}
 }
 
-\cventry{2015--2017}{Computer Engineering}{Brigham Young University}{Salt Lake City UT}{}{}
+\cventry{2015 -- 2017}{Computer Engineering}{Brigham Young University}{Salt Lake City UT}{}{}
 
 \cventry{2016}{Dell On-Site Technician}{Unisys}{Washington DC}{\href{https://www.unisys.com/partners/dell/}{unisys.com}}{
 \begin{itemize}
@@ -85,9 +93,9 @@ Software engineer keen to leave the cubicle and return to their roots in proper 
 \end{itemize}
 }
 
-\cventry{2015}{Electrical Engineering}{Montgomery Community College}{Rockville MD}{}{}
+\cventry{2014 -- 2017}{Electrical Engineering}{Montgomery Community College}{Rockville MD}{}{}
 
-\cventry{2013--2014}{Apprentice Electrician}{Craft-Light Electric}{Rockville MD}{\href{https://craftlightelectric.localsearch.com/}{craftlightelectric.localsearch.com}}{
+\cventry{2015}{Apprentice Electrician}{Craft-Light Electric}{Rockville MD}{\href{https://craftlightelectric.localsearch.com/}{craftlightelectric.localsearch.com}}{
 \begin{itemize}
     \item Wired mains power in open-stud new construction.
     \item Installed three-way, four-way, and switch-loop lighting circuits.
@@ -96,27 +104,24 @@ Software engineer keen to leave the cubicle and return to their roots in proper 
     \item Installed lights and switches in old work remodels.
 \end{itemize}
 }
-
-\cventry{2013--2014}{Apprentice Plumber}{Mallick Mechanical}{Bethesda MD}{\href{https://mallickmechanical.com/}{mallickmechanical.com}}{
-\textbf{Pike \& Rose:} New commercial high-rise construction.
-\begin{itemize}
-    \item Surveyed and marked pipe layouts from construction drawings.
-    \item Pre-placed concrete slab penetrations and hanger nuts according to plans.
-    \item Built and positioned HVAC equipment pad concrete preforms.
-    \item Installed biocide chemical metering equipment for coolant water.
-    \item Plumbed 24" diameter iron drain pipework.
-    \item Tapped a city water main for a 10" branch line.
-\end{itemize}
-\emph{(continues on back)}
-}
+\vspace{0.5in}
+\hspace{1.5in}\smallup{(continues on back)}
 
 \newpage
 \makecvhead
 
-\cventry{2013--2014}{Apprentice Plumber}{Mallick Mechanical}{Bethesda MD}{\href{https://mallickmechanical.com/}{mallickmechanical.com}}{
-\emph{(continued from front)}\newline
-\textbf{Pike \& Rose:} New commercial high-rise construction.
+\hspace{1.5in}\smallup{(continued from front)}
+\vspace{0.3in}
+
+\cventry{2013 -- 2014}{Apprentice Plumber}{Mallick Mechanical}{Bethesda MD}{\href{https://mallickmechanical.com/}{mallickmechanical.com}}{
+\textbf{Pike \& Rose:} Plumbed a new commercial high-rise building.
 \begin{itemize}
+    \item Surveyed and marked pipe layouts from construction drawings.
+    \item Pre-placed concrete slab penetrations and hanger nuts according to plans.
+    \item Built and positioned concrete preforms for HVAC equipment pads.
+    \item Installed biocide chemical metering equipment for coolant water.
+    \item Plumbed 24" diameter cast-iron drain pipework.
+    \item Tapped a city water main for a 10" branch line.
     \item Prepared weld joints on 6" natural gas main lines.
     \item Connected a rooftop generator to ground-floor diesel tanks and booster pumps.
     \item Brazed copper refrigeration pipework and installed mini-split registers.
@@ -125,20 +130,20 @@ Software engineer keen to leave the cubicle and return to their roots in proper 
     \item Furnished commercial bathrooms with toilets and sinks.
     \item Installed and wired vestibule heaters.
 \end{itemize}
-\textbf{Montgomery County Public Schools LEED:}
+\textbf{Montgomery County Public Schools:} Reviewed construction drawings.
 \begin{itemize}
     \item Reviewed MEP construction drawings in Mallick's main office.
     \item Created inventory lists of specific valves and other plumbing hardware.
     \item Compiled spec-sheet dossiers focused on proving LEED-compliant sourcing and materials.
-    \item Contacted suppliers for additional certifications not already available.
-    \item Participated in CAD review meetings to de-conflict with plans from other trades.
+    \item Contacted suppliers for additional certifications not already available online.
+    \item Participated in MEP coordination meetings to de-conflict plans with other trades.
     \item Performed general office IT support tasks.
 \end{itemize}
 }
 
 \cventry{2012}{Eagle Scout}{Boy Scouts of America}{National Capitol Area Council, Troop 1300}{}{}
 
-\cventry{2010--2014}{High School Diploma}{Poolesville High School}{Poolesville MD}{}{
+\cventry{2010 -- 2014}{High School Diploma}{Poolesville High School}{Poolesville MD}{}{
 \begin{itemize}
     \item G\"{o}del Award for Mathematics.
     \item \href{https://www.team4099.com/}{FRC FIRST Robotics Team 4099}.
@@ -160,9 +165,9 @@ Software engineer keen to leave the cubicle and return to their roots in proper 
 % \end{itemize}
 % }
 
-\vspace{1in}
+% \vspace{1in}
 
-Even our eventual AI overlords will need plumbers and electricians to cool and power their datacenters.
+% Even our eventual AI overlords will need plumbers and electricians to cool and power their datacenters.
 
 \end{document}
 
