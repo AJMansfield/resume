@@ -22,7 +22,7 @@
 % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
 
 %\usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+\setlength{\hintscolumnwidth}{1in}                % if you want to change the width of the column with the dates
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 %\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
 
@@ -47,15 +47,14 @@
 \begin{document}
 \makecvtitle
 
-
-\begin{adjustwidth}{0.1\textwidth}{0.1\textwidth}% 1em left, 2em right
+\begin{adjustwidth}{0.1\textwidth}{0.1\textwidth}
     Experienced embedded electronics engineer eager for challenging technical work. 
 
     Left hand on the oscilloscope probe; right hand on the keyboard.
 \end{adjustwidth}
 
 \section{Experience}
-\cventry{2024 -- \smallup{current}}{Triage Test Engineer}{MicroPython}{Open Source}{\href{https://micropython.org/}{micropython.org}}{
+\cventry{2024 -- \smallup{current}}{\large Triage Test Engineer}{MicroPython}{Open Source}{\href{https://micropython.org/}{micropython.org}}{
 \textbf{PEP487:} Implemented \href{https://peps.python.org/pep-0487/}{PEP 487 -- Simpler customisation of class creation}.
 \begin{itemize}
     \item Documented requirements with automated test cases. \mppr{15500}
@@ -63,7 +62,7 @@
     \item Minimized duplicated effort with git feature-branch workflows and topology.
     \item Benchmarked comparisons using custom automated hardware-in-the-loop tests. \mppr{16825}
     \item Solicited and engaged with project leadership on comparative trade-offs regarding soft objectives.
-    \item Discovered and reported a novel bug in CPython.
+    \item Discovered and reported a novel class-initialization bug in CPython.
         \angnote{\href{https://bugs.python.org/issue28797}{BPO-28797}} \ghpr{python}{CPython}{72983}
     \item Engineered a final no-compromises version using embedded-specific memory layouts. \mppr{16806}
     \item Participated in code reviews and revised into merge-quality code \emph{and} commit history.
@@ -97,7 +96,7 @@
 \end{itemize}
 }
 
-\cventry{2017 -- \smallup{current}}{Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
+\cventry{2017 -- \smallup{current}}{\large Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
 \textbf{Weinberg:} Built brain-scanning sensor packages to operate in an extreme MRI magnetic environment.
 \begin{itemize}
     \item Designed and implemented circuitry for a PoE powered device.
@@ -135,7 +134,7 @@
 \newpage
 \makecvhead
 
-\cventry{\smallup{continued}}{Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
+\cventry{\smallup{continued}}{\large Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
 \textbf{Cornerstone:} \smallup{continued}
 \begin{itemize}
     \item Integrated software into military versions of \href{https://www.civtak.org/atak-about/}{Android Tactical Assault Kit}.
@@ -160,7 +159,7 @@
 
 \cventry{2015 -- 2017}{Computer Engineering}{Brigham Young University}{Salt Lake City UT}{}{}
 
-\cventry{2016}{Dell On-Site Technician}{Unisys}{Washington DC}{\href{https://www.unisys.com/partners/dell/}{unisys.com}}{
+\cventry{2016}{\large Dell On-Site Technician}{Unisys}{Washington DC}{\href{https://www.unisys.com/partners/dell/}{unisys.com}}{
 \begin{itemize}
     \item Traveled to customer sites.
     \item Performed warranty service and parts-level repairs.
@@ -170,7 +169,7 @@
 
 \cventry{2014 -- 2015}{Engineering}{Montgomery Community College}{Rockville MD}{}{}
 
-\cventry{2013 -- 2014}{Apprentice Plumber}{Mallick Mechanical}{Bethesda MD}{\href{https://mallickmechanical.com/}{mallickmechanical.com}}{
+\cventry{2013 -- 2014}{\large Apprentice Plumber}{Mallick Mechanical}{Bethesda MD}{\href{https://mallickmechanical.com/}{mallickmechanical.com}}{
 \textbf{Pike \& Rose:} New commercial high-rise construction.
 \begin{itemize}
     \item Plumbed in large cast iron drain pipework (up to 24" diameter).
@@ -179,17 +178,22 @@
     \item Furnished commercial bathrooms with toilets and sinks.
 \end{itemize}}
 
-\cventry{2012}{Eagle Scout}{Boy Scouts of America}{National Capitol Area Council, Troop 1300}{}{}
+\cventry{2012}{\large Eagle Scout}{Boy Scouts of America}{National Capitol Area Council, Troop 1300}{}{
+\begin{itemize}
+    \item Lead a team of 25 people to spread 70 cubic yards of mulch and wood chips.
+    \item Coordinated, assembled, delivered, and installed picnic tables.
+\end{itemize}
+}
 
 \cventry{2010 -- 2014}{High School Diploma}{Poolesville High School}{Poolesville MD}{}{
 \begin{itemize}
-    \item G\"{o}del Award for Mathematics.
-    \item \href{https://www.team4099.com/}{FRC FIRST Robotics Team 4099}.
+    \item Earned a G\"{o}del Award for mathematics.
+    \item Competed on \href{https://www.team4099.com/}{FRC FIRST Robotics Team 4099}.
 \end{itemize}
 }
 
 \section{References}
-\setlength{\hintscolumnwidth}{0em}
+\setlength{\hintscolumnwidth}{0in}
 
 \begin{cvcolumns}
   \cvcolumn{MicroPython}{
@@ -213,7 +217,8 @@
     \input{personal-refs}
   }
 \end{cvcolumns}
-\setlength{\hintscolumnwidth}{5em}
+
+\setlength{\hintscolumnwidth}{1in}
 
 
 % \section{Interviews}
@@ -234,7 +239,7 @@
 %% <width>, <exp_width> should be lengths smaller than \textwidth, <factor> needs to be between 0 and 1.
 %% Examples:
 % \setcvskillcolumns[5em][][]%    adjust first column. Same as \setcvskillcolumns[5em]
-\setcvskillcolumns[][0.32][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
+\setcvskillcolumns[][0.33][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
 % \setcvskillcolumns[][][\widthof{``Year''}]%     adjust fourth (years) column.
 % \setcvskillcolumns[][0.45][\widthof{``Year''}]%
 % \setcvskillcolumns[\widthof{``Language''}][0.48][]
@@ -281,12 +286,12 @@
 \cvskillentry{}{2}{Java}{2}{We've all modded minecraft a \emph{little,} right?}
 \cvskillentry*{Platforms:}{5}{MicroPython}{6}{I know least, parts of myself left behind to help create it.}
 \cvskillentry{}{5}{Linux}{7}{Vendor BSPs are a form of aposomatic coloration.}
-\cvskillentry{}{4}{SQLite}{6}{Best database.}
+\cvskillentry{}{4}{SQLite}{6}{Scalability is a myth, simplicity is forever.}
 \cvskillentry{}{4}{BusyBox}{5}{Your mistake to assume my Linux is GNU/Linux.}
 \cvskillentry{}{3}{Yocto}{2}{Best Linux distribution for embedded firmware.}
 \cvskillentry{}{3}{Zephyr}{2}{Best RTOS.}
 \cvskillentry*{OS:}{5}{Linux}{20}{Year of the Linux Desktop? Please?}
-\cvskillentry{}{4}{Windows}{25}{At least with WSL it \emph{kinda} runs everything.}
+\cvskillentry{}{4}{Windows}{24}{At least with WSL it \emph{kinda} runs everything.}
 \cvskillentry*{EDA:}{4}{KiCAD}{2}{Eagerly awaiting Geometric Constraints in KiCad 11.}
 \cvskillentry{}{3}{Altium}{2}{It's the default for reasons \emph{other} than being good.}
 \cvskillentry{}{4}{EasyEDA}{4}{Easy instead of featureful.}
@@ -295,11 +300,11 @@
 \cvskillentry{}{4}{Fusion 360}{4}{Better brep geometry kernel than OnShape.}
 \cvskillentry*{Making:}{4}{µSoldering}{10}{Happiness is 0603 or larger with lots of flux.}
 \cvskillentry{}{3}{3D Printing}{6}{So many slicer settings, so little time.}
-\cvskillentry{}{4}{CNC Machining}{2}{Only the second worst kind of chip.}
-
-\section{Interests}
-\cvitem{Writing}{Science fiction and fantasy by choice, but writing is the same as anything else.}
-\cvitem{Cooking}{Candy, pies, fried, baked, grilled, stewed. Spicy is a tool, not the point.}
+\cvskillentry{}{4}{CNC Machining}{3}{Only the second worst kind of chip.}
+\cvskillentry{}{3}{Plumbing}{2}{Even an AI overlords's data center will need coolant water.}
+\cvskillentry{}{3}{Electrical}{2}{Though I still clean up after myself.}
+\cvskillentry*{Interests:}{5}{Writing}{12}{My sci-fi reads like a technical manual.}
+\cvskillentry{}{4}{Cooking}{26}{Candied, fried, baked, grilled, stewed, or baked in a pie.}
 
 %% \cvskill{<0-5>} command
 % \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
