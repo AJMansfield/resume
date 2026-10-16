@@ -12,15 +12,65 @@
 }
 
 \newcommand{\emailreference}[3]{%
-    \href{mailto:#3?subject=Reference\%20Request\%20for\%20Anson\%20Mansfield\&body=Dear\%20#1\%2C}{#2 \textlangle\texttt{#3}\textrangle}%
+    \href{mailto:#3?subject=Reference\%20Request\%20for\%20Anson\%20Mansfield\&body=Dear\%20#1\%2C}{#2 \footnotesize\textlangle\texttt{#3}\textrangle}%
 }
-\newcommand{\textreference}[3]{%
+\newcommand{\textreference}[2]{%
     \href{#1}{\textlangle#2\textrangle}%
 }
-\newcommand{\linkreference}[3]{%
-    \href{#1}{\textlangle\texttt{#2}\textrangle}%
+\newcommand{\linkreference}[2]{%
+    \footnotesize\href{#1}{\textlangle\texttt{#2}\textrangle}%
 }
 
 \newcommand{\smallup}[1]{%
-    \raisebox{0.6ex}{\scriptsize\raisebox{-0.6ex}{#1}}
+    \raisebox{0.6ex}{\scriptsize\raisebox{-0.6ex}{#1}}%
+}
+\newcommand{\stackdates}[2]{%
+    % {\scriptsize\stackbox[r][t]{#1 --\\#2}}%
+    {\scriptsize #1 --\raisebox{-1\baselineskip}{\makebox[0pt][r]{#2}}}%
+}
+
+
+
+% Source - https://tex.stackexchange.com/a/146759
+% Posted by karlkoeller, modified by community. See post 'Timeline' for change history
+% Retrieved 2026-10-16, License - CC BY-SA 3.0
+\newcommand{\invisiblesection}[1]{%
+    \phantomsection%
+    \addcontentsline{toc}{section}{#1}%
+}
+\newcommand{\invisiblesubsection}[1]{%
+    \phantomsection%
+    \addcontentsline{toc}{subsection}{#1}%
+}
+\newcommand{\invisiblesubsubsection}[1]{%
+    \phantomsection%
+    \addcontentsline{toc}{subsubsection}{#1}%
+}
+
+
+\usepackage{refcount}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+% #1 = TOC level, e.g. subsection
+% #2 = entry text
+% #3 = label identifying the actual destination
+\newcommand{\addtocentryat}[3]{%
+  % Entry in the printed table of contents:
+  \addtocontents{toc}{%
+    \protect\contentsline{#1}{#2}%
+      {\getpagerefnumber{#3}}%
+      {\getrefbykeydefault{#3}{anchor}{}}%
+  }%
+  % Entry in the PDF document outline:
+  \bookmark[
+    level=#1,
+    dest={\getrefbykeydefault{#3}{anchor}{Doc-Start}}%
+  ]{#2}%
+}
+
+% An invisible destination, without adding a TOC entry here.
+\newcommand{\invisiblemarker}[1]{%
+  \phantomsection
+  \label{#1}%
 }

@@ -1,5 +1,5 @@
 
-\documentclass[11pt,letterpaper,sans]{./moderncv/moderncv}
+\documentclass[12pt,letterpaper,sans]{./moderncv/moderncv}
 % possible options include font size ('10pt', '11pt' and '12pt'),
 % paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape'),
 % and font family ('sans' and 'roman')
@@ -48,14 +48,112 @@
 \makecvtitle
 
 \begin{adjustwidth}{0.1\textwidth}{0.1\textwidth}
-    Experienced embedded electronics engineer eager for challenging technical work. 
+    Experienced full-stack embedded electronics engineer eager for challenging technical work. 
 
     Left hand on the oscilloscope probe; right hand on the keyboard.
 \end{adjustwidth}
+\vspace{1\baselineskip}
 
-\section{Experience}
-\cventry{2024 -- \smallup{current}}{\large Triage Test Engineer}{MicroPython}{Open Source}{\href{https://micropython.org/}{micropython.org}}{
-\textbf{PEP487:} Implemented \href{https://peps.python.org/pep-0487/}{PEP 487 -- Simpler customisation of class creation}.
+\invisiblesection{Experience}
+\invisiblesubsection{Mantaro}
+\invisiblesubsubsection{Senior Software Engineer}
+\cventry{2017 -- \smallup{current}}{\large Senior Software Engineer}{Mantaro}{Germantown MD}{\linkreference{https://mantaro.com/}{mantaro.com}}{
+Executed client project requirements and integrated with client workflows.
+\begin{itemize}
+    \item Integrated and troubleshot complex interconnected hardware and software systems.
+    \item Applied ISO 9000 engineering and document control processes and Agile software development techniques.
+    \item Developed and updated software using Agile software development methodologies.
+\end{itemize}
+}
+
+\invisiblesubsubsection{PCB Design Engineer}
+\cventry{\stackdates{May 2026}{Jul 2026}}{PCB Design Engineer}{Mantaro - NeurQi}{}{\linkreference{https://neurqi.com/}{neurqi.com}}{
+Built brain-scanning sensor packages to operate in an extreme MRI magnetic environment.
+\begin{itemize}
+    \item Designed and implemented circuitry for a PoE powered device.
+    \item Designed and laid out a dense 10-layer PCB.
+    \item Wrote procedures to resolve unexpected part availability challenges and maintain project schedule.
+\end{itemize}
+}
+\addtocentryat{subsubsection}{Senior Embedded Engineer}{dest:patton}
+\addtocentryat{subsubsection}{Lead Software Engineer}{dest:sentinel}
+\addtocentryat{subsubsection}{Embedded Software Engineer}{dest:viavi}
+\addtocentryat{subsubsection}{Embedded Engineer}{dest:cornerstone}
+\addtocentryat{subsubsection}{Electronics Technician}{dest:senseit}
+
+\invisiblesubsection{MicroPython}
+\invisiblesubsubsection{Triage Test Engineer}
+\cventry[0.25em]{2024 -- \smallup{current}}{\large Triage Test Engineer}{MicroPython}{Open Source}{\linkreference{https://micropython.org/}{micropython.org}}{
+Enhanced the MicroPython embedded python runtime.
+\begin{itemize}
+    \item Triaged user bug reports for completeness.
+    \item Reproduced nontrivial defect conditions as programmatic regression tests.
+    \item Fixed new tests symptoms on own hardware to expand details.
+    \item Triaged patch submissions for completeness, including test coverage and sensitivity verification.
+    \item Completed various other major projects listed below.
+\end{itemize}
+}
+
+\invisiblesubsubsection{Triage Team Founding Lead}
+\cventry{\stackdates{Feb 2026}{current}}{Triage Team Founding Lead}{MicroPython}{}{}{
+Founded the 10-person MicroPython's Triage Team.
+\begin{itemize}
+    \item Analyzed volunteer morale problems \& PR process delays behind them.
+        \angnote{\href{https://github.com/orgs/micropython/discussions/18844}{\#18844}}
+    \item Proposed the creation of the resulting Triage Team to resolve it.
+    \item Offered and accepted appointment as one of the team's initial members.
+    \item Led development of team processes, tooling, and process documentation.
+        \angnote{\href{https://github.com/orgs/micropython/discussions/18878}{\#18878}}
+\end{itemize}
+}
+
+\invisiblemarker{dest:patton}
+\cventry{\stackdates{Jan 2024}{Mar 2026}}{Software Engineer}{Mantaro - Patton}{}{\linkreference{https://www.patton.com/}{patton.com}}{
+Built secure VoIP and smartphone KVM systems.
+\begin{itemize}
+    \item Ported Linux ethernet drivers to a non-standard Linux BSP driver framework.
+    \item Hand-wired prototype display adapters with high-speed differential signaling.
+    \item Developed MicroPython-based baseboard firmware to operate and easily debug large complex PCBs.
+    \item Coordinated firmware for a hardware KVM pipeline: MIPI-DSI, codecs, SFP ethernet, DisplayPort, USB-C.
+    \item Accelerated boot times by parallelizing device blob uploads over multiple bandwidth-limited wire busses.
+    \item Managed prototype circuitry changes and firmware version skew via an ISO 9000 ECN process.
+    \item Performed pre-compliance tests and designed EMI mitigations aimed at TEMPEST certification.
+\end{itemize}
+}
+
+\invisiblesubsubsection{Compiler Engineer}
+\cventry{\stackdates{Nov 2025}{Feb 2026}}{Compiler Engineer}{MicroPython - Compiler Explorer}{}{\linkreference{https://python.godbolt.org/z/vveG3o45d}{python.godbolt.org}}{
+Added MicroPython to Godbolt Compiler Explorer.
+\begin{itemize}
+    \item Updated MicroPython's disassembler to emit godbolt-format disassembly JSON. \mppr{18381}
+    \item Deployed suitable CI/CD build containers and compiler artifacts.
+        \ghpr{compiler-explorer}{misc-builder}{117} \ghpr{compiler-explorer}{compiler-workflows}{43} \ghpr{compiler-explorer}{infra}{1888}
+    \item Extended CE code to invoke MicroPython cross-compiler and disassembler.
+        \ghpr{compiler-explorer}{compiler-explorer}{8256}
+    \item Bundled offline package cache for full MIP package functionality. \ghpr{compiler-explorer}{misc-builder}{125} \ghpr{compiler-explorer}{misc-builder}{126}
+\end{itemize}
+}
+
+\cventry{}{\normalfont\scriptsize(continues to back)}{}{}{}{}
+\newpage
+\makecvhead
+\cventry{}{\normalfont\scriptsize(continues from front)}{}{}{}{}
+
+\invisiblesubsubsection{Embedded Test Engineer}
+\cventry{\stackdates{Jul 2025}{Nov 2026}}{Embedded Test Engineer}{MicroPython}{}{\linkreference{https://github.com/micropython/micropython/pulls?q=author\%3AAJMansfield}{github.com/micropython}}{
+Lowered defect rates with combined statistical, technical, and human factors methods.
+\begin{itemize}
+    \item Identified low-reliability test processes using confusion matrix statistics. \mppr{17745} \mppr{17993}
+    \item Reported on an emerging Normalization of Deviance issues among contributors.
+        \angnote{\href{https://github.com/micropython/micropython/pull/18842\#issuecomment-3929430580}{\#18842}}
+    \item Led discussion and proposals around problems and technical and human-factors solutions.
+        \angnote{\href{https://github.com/orgs/micropython/discussions/18844}{\#18844}}
+\end{itemize}
+}
+
+\invisiblesubsubsection{Embedded Python Engineer}
+\cventry{\stackdates{Jul 2024}{Jul 2025}}{Python Engineer}{MicroPython}{}{\linkreference{https://github.com/micropython/micropython/pulls?q=author\%3AAJMansfield}{github.com/micropython}}{
+Implemented \href{https://peps.python.org/pep-0487/}{PEP 487 -- Simpler customisation of class creation}.
 \begin{itemize}
     \item Documented requirements with automated test cases. \mppr{15500}
     \item Proposed multiple competing implementations. \mppr{15503} \mppr{16816} \mppr{17693}
@@ -68,98 +166,74 @@
     \item Participated in code reviews and revised into merge-quality code \emph{and} commit history.
     \item Communicated completion with downstream projects. \ghpr{adafruit}{CircuitPython}{9685}
 \end{itemize}
-\textbf{Testing:} Lowered defect rates with combined statistical, technical, and human factors methods.
-\begin{itemize}
-    \item Identified low-reliability test processes using confusion matrix statistics. \mppr{17745} \mppr{17993}
-    \item Reported on an emerging Normalization of Deviance issues among contributors.
-        \angnote{\href{https://github.com/micropython/micropython/pull/18842\#issuecomment-3929430580}{\#18842}}
-    \item Led discussion and proposals around problems and technical and human-factors solutions.
-        \angnote{\href{https://github.com/orgs/micropython/discussions/18844}{\#18844}}
-\end{itemize}
-\textbf{Compiler Explorer:} \href{https://python.compiler-explorer.com/z/vveG3o45d}{Added MicroPython to Godbolt Compiler Explorer.}
-\begin{itemize}
-    \item Updated MicroPython's disassembler to emit godbolt-format disassembly JSON. \mppr{18381}
-    \item Deployed suitable CI/CD build containers and compiler artifacts.
-        \ghpr{compiler-explorer}{misc-builder}{117} \ghpr{compiler-explorer}{compiler-workflows}{43} \ghpr{compiler-explorer}{infra}{1888}
-    \item Extended CE code to invoke MicroPython cross-compiler and disassembler.
-        \ghpr{compiler-explorer}{compiler-explorer}{8256}
-    \item Bundled offline package cache for full functionality. \ghpr{compiler-explorer}{misc-builder}{125} \ghpr{compiler-explorer}{misc-builder}{126}
-\end{itemize}
-\textbf{Triage Team:} \href{https://github.com/orgs/micropython/teams/triage-team}{Founded and led 10-person MicroPython's Triage Team.}
-\begin{itemize}
-    \item Analyzed volunteer morale problems \& PR process delays behind them.
-        \angnote{\href{https://github.com/orgs/micropython/discussions/18844}{\#18844}}
-    \item Proposed the creation of the resulting Triage Team to resolve it.
-    \item Offered and accepted appointment as one of the team's initial members.
-    \item Led development of team processes, tooling, and process documentation.
-        \angnote{\href{https://github.com/orgs/micropython/discussions/18878}{\#18878}}
-\end{itemize}
 }
 
-\cventry{2017 -- \smallup{current}}{\large Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
-\textbf{Weinberg:} Built brain-scanning sensor packages to operate in an extreme MRI magnetic environment.
+\invisiblemarker{dest:sentinel}
+\cventry{\stackdates{Nov 2022}{Jun 2024}}{Lead Software Engineer}{Mantaro - Sentinel Forge Technologies}{}{}{
+Built the Guardtower platform for advanced network intrusion defense.
 \begin{itemize}
-    \item Designed and implemented circuitry for a PoE powered device.
-    \item Designed and laid out a dense 10-layer PCB.
-    \item Wrote procedures to resolve unexpected part availability challenges and maintain project schedule.
-\end{itemize}
-\textbf{Patton:} Built secure VoIP and smartphone KVM systems.
-\begin{itemize}
-    \item Ported Linux ethernet drivers to a non-standard Linux BSP driver framework.
-    \item Hand-wired prototype display adapters with high-speed differential signaling.
-    \item Developed MicroPython-based baseboard firmware to operate and easily debug large complex PCBs.
-    \item Wrote software to coordinate a KVM pipeline:  MIPI-DSI, codecs, SFP ethernet, DisplayPort, USB-C.
-    \item Accelerated boot times by parallelizing device blob uploads over multiple bandwidth-limited wire busses.
-    \item Managed prototype circuitry changes and firmware version skew via an ISO 9000 ECN process.
-    \item Performed pre-compliance tests and designed EMI mitigations aimed at TEMPEST certification.
-\end{itemize}
-\textbf{Sentinel:} Built a platform for advanced network intrusion defense.
-\begin{itemize}
-    \item Developed tooling to present K8s-based honeypot containers without low-level network timing tells.
+    \item Developed tooling to present Kubernetes-based honeypots without low-level network timing tells.
     \item Implemented ARP from scratch with extra non-\href{https://datatracker.ietf.org/doc/html/rfc6747}{RFC6747}
         behaviors oriented around network-wide defense.
     \item Architected an X.509 extension for pay-by-usage software licensing compatible with airgapped systems.
 \end{itemize}
-\textbf{Cornerstone:} Built various tools and technologies for ``censorship resistance''.
+}
+
+\invisiblemarker{dest:viavi}
+\cventry{\stackdates{Apr 2022}{Dec 2022}}{Embedded Software Engineer}{Mantaro - VIAVI}{}{\linkreference{https://www.viavisolutions.com/}{viavisolutions.com}}{
+Updated software for existing wireless and wired telecom test equipment.
+\begin{itemize}
+    \item Worked with Viavi Ranger EMS forensic signal analysis and electromagnetic warfare suite.
+    \item Upgraded ONA-1000 Fiber Channel frontend software to support 64GFC.
+\end{itemize}
+}
+
+\invisiblemarker{dest:cornerstone}
+\cventry{\stackdates{Nov 2017}{Aug 2023}}{Embedded Engineer}{Mantaro - Cornerstone}{}{}{
+Built various tools and technologies for ``censorship resistance''.
 \begin{itemize}
     \item Developed low-level firmware for the Intel x86 Management Engine platform.
     \item Designed and fabricated miniturized circuitry for multi-IoT-technology portable radios.
     \item Developed MicroPython-based firmware to bridge incompatible IoT and conventional transports.
     \item Developed pre-\href{https://csrc.nist.gov/pubs/sp/800/232/final}{NIST SP 800-232} lightweight
         cryptographic primitives for low-MTU transports.
-\end{itemize}
-}
-
-\cventry{}{}{}{}{}{}
-\newpage
-\makecvhead
-
-\cventry{\smallup{continued}}{\large Senior Software Engineer}{Mantaro}{Germantown MD}{\href{https://mantaro.com/}{mantaro.com}}{
-\textbf{Cornerstone:} \smallup{continued}
-\begin{itemize}
     \item Integrated software into military versions of \href{https://www.civtak.org/atak-about/}{Android Tactical Assault Kit}.
     \item Invented the unpublished Indigo network routing protocol.
     \item Invented other controlled unclassified technologies not listable here.
     \item Participated by invitation in the Technical Support and Operational Analysis TSOA 18-1 conference.
     \item Participated in Navy JVAB evaluation of Indigo and other technologies with positive security results.
 \end{itemize}
-\textbf{VIAVI:} Wireless and wired telecom test equipment.
-\begin{itemize}
-    \item Worked with Viavi Ranger EMS forensic signal analysis and electromagnetic warfare suite.
-    \item Upgraded ONA-1000 frontend software to Fiber Channel to support 64GFC.
-\end{itemize}
-\textbf{Acoustic Sentri:} Modernized audio interferometry gunshot detector system.
+}
+
+\cventry{}{\normalfont\scriptsize(continues to next)}{}{}{}{}
+\newpage
+\makecvhead
+\cventry{}{\normalfont\scriptsize(continues from previous)}{}{}{}{}
+
+\invisiblemarker{dest:senseit}
+\cventry{\stackdates{Aug 2017}{Oct 2024}}{Electronics Technician}{Mantaro - Safety Dynamics}{}{\linkreference{https://www.youtube.com/watch?v=UcrtWQgwZp8}{youtu.be/UcrtWQgwZp8}}{
+Modernized the Acoustic Sentri audio interferometry gunshot detector system.
 \begin{itemize}
     \item Reverse-engineered obsolete DSP firmware to port to new chip revisions in updated designs.
+    \item Classified audio in real time with hybrid neural network AI and conventional signal processing techniques.
     \item Developed RPi-based proxy service to adapt sensors to new standards like ONVIF for local camera pointing.
     \item Traveled internationally to facilitate customer demonstrations of the system.
     \item Integrated the sensors with existing systems for the Baltimore Police Department.
 \end{itemize}
 }
 
-\cventry{2015 -- 2017}{Computer Engineering}{Brigham Young University}{Salt Lake City UT}{}{}
+\addtocentryat{subsection}{Unisys}{dest:dell}
+\addtocentryat{subsubsection}{Dell On-Site Technician}{dest:dell}
+\addtocentryat{subsection}{Mallick}{dest:mallick}
+\addtocentryat{subsubsection}{Apprentice Plumber}{dest:mallick}
 
-\cventry{2016}{\large Dell On-Site Technician}{Unisys}{Washington DC}{\href{https://www.unisys.com/partners/dell/}{unisys.com}}{
+\invisiblesection{Education}
+\invisiblesubsection{Brigham Young University}
+\invisiblesubsubsection{Computer Engineering}
+\cventry{2015 -- 2017}{Computer Engineering}{Brigham Young University}{Salt Lake City UT}{\smallup{(incomplete batchelor's)}}{}
+
+\invisiblemarker{dest:dell}
+\cventry{2016}{Dell On-Site Technician}{Unisys - Dell}{Washington DC}{\linkreference{https://www.unisys.com/partners/dell/}{unisys.com}}{
 \begin{itemize}
     \item Traveled to customer sites.
     \item Performed warranty service and parts-level repairs.
@@ -167,10 +241,13 @@
 \end{itemize}
 }
 
-\cventry{2014 -- 2015}{Engineering}{Montgomery Community College}{Rockville MD}{}{}
+\invisiblesubsection{Montgomery College}
+\invisiblesubsubsection{Computer Engineering}
+\cventry{2014 -- 2015}{Engineering}{Montgomery College}{Rockville MD}{\smallup{(incomplete associate's)}}{}
 
-\cventry{2013 -- 2014}{\large Apprentice Plumber}{Mallick Mechanical}{Bethesda MD}{\href{https://mallickmechanical.com/}{mallickmechanical.com}}{
-\textbf{Pike \& Rose:} New commercial high-rise construction.
+\invisiblemarker{dest:mallick}
+\cventry{2013 -- 2014}{\large Apprentice Plumber}{Mallick Mechanical - Pike \& Rose}{Bethesda MD}{\linkreference{https://mallickmechanical.com/}{mallickmechanical.com}}{
+Plumbed a commercial new-construction high-rise shopping complex.
 \begin{itemize}
     \item Plumbed in large cast iron drain pipework (up to 24" diameter).
     \item Soldered copper water pipework.
@@ -185,6 +262,8 @@
 \end{itemize}
 }
 
+\invisiblesubsection{Poolesville High School}
+\invisiblesubsubsection{High School Diploma}
 \cventry{2010 -- 2014}{High School Diploma}{Poolesville High School}{Poolesville MD}{}{
 \begin{itemize}
     \item Earned a G\"{o}del Award for mathematics.
@@ -192,11 +271,23 @@
 \end{itemize}
 }
 
-\section{References}
 \setlength{\hintscolumnwidth}{0in}
+\recomputecvlengths
 
+\section{References}
 \begin{cvcolumns}
-  \cvcolumn{MicroPython}{
+  \cvcolumn{}{
+    \subsection{Mantaro}
+    \begin{itemize}
+        \item \emailreference{Gordon\%20McDonnel}{Gordon McDonnel}{gordon@ursamining.com}
+        \item \emailreference{Jeremy\%20Parsons}{Jeremy Parsons}{jparsons@mantaro.com}
+        \item \emailreference{Richard\%20Nicholson}{Richard Nicholson}{richard\_n@earthlink.net}
+    \end{itemize}
+    \subsection{Personal}
+    \input{personal-refs}
+  }
+  \cvcolumn{}{
+    \subsection{MicroPython}
     \begin{itemize}
         \item \emailreference{Damien\%20George}{Damien George}{damien@micropython.org}
         \item \emailreference{Jos\%20Verlinde}{Jos Verlinde}{jos\_verlinde@hotmail.com}
@@ -204,21 +295,10 @@
         \item \emailreference{Alessandro\%20Gatti}{Alessandro Gatti}{a.gatti@frob.it}
     \end{itemize}
   }
-  \cvcolumn{Mantaro}{
-    \begin{itemize}
-        \item \emailreference{Gordon\%20McDonnel}{Gordon McDonnel}{gordon@ursamining.com}
-        \item \emailreference{Jeremy\%20Parsons}{Jeremy Parsons}{jparsons@mantaro.com}
-        \item \emailreference{Richard\%20Nicholson}{Richard Nicholson}{richard\_n@earthlink.net}
-    \end{itemize}
-  }
-\end{cvcolumns}
-\begin{cvcolumns}
-  \cvcolumn{Family \& Friends}{
-    \input{personal-refs}
-  }
 \end{cvcolumns}
 
 \setlength{\hintscolumnwidth}{1in}
+\recomputecvlengths
 
 
 % \section{Interviews}
@@ -231,7 +311,7 @@
 
 % \newpage
 % \makecvhead
-\section{Skill matrix}
+\section{Skill Matrix}
 %% Skill matrix as an alternative to rate one's skills, computer or other.
 
 %% Adjusts width of skill matrix columns.
@@ -275,7 +355,8 @@
 
 %% \cvskillentry[*][<post_padding>]{<skill_category>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}%
 %% Example usages:
-\cvskillentry*{Languages:}{5}{Python}{18}{May our bytecode run a thousand years!}
+
+\cvskillentry*{Languages}{5}{Python}{18}{May our bytecode run a thousand years!}
 \cvskillentry{}{5}{C}{15}{Stars in the void, point to registers you've never \emph{dreamed}.}
 \cvskillentry{}{4}{C++}{10}{Take comfort in the control flow you \emph{can't} find.}
 \cvskillentry{}{3}{Rust}{2}{Where we go, safety cannot always. Embedded is no place for fear.}
@@ -284,26 +365,26 @@
 \cvskillentry{}{2}{SQL}{2}{The ORM has betrayed me, and it's sure to again.}
 \cvskillentry{}{2}{\LaTeX}{2}{As demonstrated.}
 \cvskillentry{}{2}{Java}{2}{We've all modded minecraft a \emph{little,} right?}
-\cvskillentry*{Platforms:}{5}{MicroPython}{6}{I know least, parts of myself left behind to help create it.}
+\cvskillentry*{Platforms}{5}{MicroPython}{6}{I know least, parts of myself left behind to help create it.}
 \cvskillentry{}{5}{Linux}{7}{Vendor BSPs are a form of aposomatic coloration.}
 \cvskillentry{}{4}{SQLite}{6}{Scalability is a myth, simplicity is forever.}
 \cvskillentry{}{4}{BusyBox}{5}{Your mistake to assume my Linux is GNU/Linux.}
 \cvskillentry{}{3}{Yocto}{2}{Best Linux distribution for embedded firmware.}
 \cvskillentry{}{3}{Zephyr}{2}{Best RTOS.}
-\cvskillentry*{OS:}{5}{Linux}{20}{Year of the Linux Desktop? Please?}
+\cvskillentry*{OS}{5}{Linux}{20}{Year of the Linux Desktop? Please?}
 \cvskillentry{}{4}{Windows}{24}{At least with WSL it \emph{kinda} runs everything.}
-\cvskillentry*{EDA:}{4}{KiCAD}{2}{Eagerly awaiting Geometric Constraints in KiCad 11.}
+\cvskillentry*{EDA}{4}{KiCAD}{2}{Eagerly awaiting Geometric Constraints in KiCad 11.}
 \cvskillentry{}{3}{Altium}{2}{It's the default for reasons \emph{other} than being good.}
 \cvskillentry{}{4}{EasyEDA}{4}{Easy instead of featureful.}
 \cvskillentry{}{3}{TopoR}{1}{The \emph{only} good pcb autorouter.}
-\cvskillentry*{CAD:}{4}{OnShape}{2}{Excellent scripting interface; my preference.}
+\cvskillentry*{CAD}{4}{OnShape}{2}{Excellent scripting interface; my preference.}
 \cvskillentry{}{4}{Fusion 360}{4}{Better brep geometry kernel than OnShape.}
-\cvskillentry*{Making:}{4}{µSoldering}{10}{Happiness is 0603 or larger with lots of flux.}
+\cvskillentry*{Making}{4}{µSoldering}{10}{Happiness is 0603 or larger with lots of flux.}
 \cvskillentry{}{3}{3D Printing}{6}{So many slicer settings, so little time.}
 \cvskillentry{}{4}{CNC Machining}{3}{Only the second worst kind of chip.}
 \cvskillentry{}{3}{Plumbing}{2}{Even an AI overlords's data center will need coolant water.}
 \cvskillentry{}{3}{Electrical}{2}{Though I still clean up after myself.}
-\cvskillentry*{Interests:}{5}{Writing}{12}{My sci-fi reads like a technical manual.}
+\cvskillentry*{Interests}{5}{Writing}{12}{My sci-fi reads like a technical manual.}
 \cvskillentry{}{4}{Cooking}{26}{Candied, fried, baked, grilled, stewed, or baked in a pie.}
 
 %% \cvskill{<0-5>} command

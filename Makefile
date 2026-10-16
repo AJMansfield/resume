@@ -1,7 +1,7 @@
 .PHONY: all install-deps clean
 
 LATEXRUN := TEXINPUTS=.:./moderncv//:$$TEXINPUTS ./latexrun/latexrun --latex-cmd=lualatex
-SOURCES := personal-info.tex personal-refs.tex
+SOURCES := personal-info.tex personal-refs.tex doc-setup.tex macros.tex
 
 all: Anson-Mansfield-tech.pdf Anson-Mansfield-trades.pdf
 
