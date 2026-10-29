@@ -1,14 +1,14 @@
 \newcommand{\angnote}[1]{%
-    {\tiny\textlangle#1\textrangle}%
+    \raisebox{0.6ex}{\tiny\raisebox{-0.6ex}{\textlangle#1\textrangle}}%
 }
 \newcommand{\ghpr}[3]{%
-    \angnote{\href{https://github.com/#1/#2/pull/#3}{#2\##3}}%
+    \href{https://github.com/#1/#2/pull/#3}{\angnote{#2\##3}}%
 }
 \newcommand{\ghprfull}[3]{%
-    \angnote{\href{https://github.com/#1/#2/pull/#3}{#1/#2\##3}}%
+    \href{https://github.com/#1/#2/pull/#3}{\angnote{#1/#2\##3}}%
 }
 \newcommand{\mppr}[1]{%
-    \angnote{\href{https://github.com/micropython/micropython/pull/#1}{\##1}}%
+    \href{https://github.com/micropython/micropython/pull/#1}{\angnote{MicroPython\##1}}%
 }
 
 \newcommand{\emailreference}[3]{%
